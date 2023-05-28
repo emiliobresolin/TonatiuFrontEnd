@@ -71,6 +71,8 @@ function mostrarConteudoDetalhes(id) {
 		
 		// Atualiza o ID atual para o novo ID
 		idAtual = id;
+		// Chama a função mostrarConteudoDescricao para remover a classe 'mostrar'
+		mostrarConteudoDescricao().remove(id);
 	}
 }
 // Adicione a classe "ocultar" ao primeiro ID
@@ -79,9 +81,10 @@ document.getElementById('ocultar').classList.add('ocultar');
 function mostrarConteudoDescricao(id) {
 	let secaoSelecionada = document.getElementById(id);
 
-	if (idAtualDesc === id) {
-		// Mesmo ID, apenas remove a classe "mostrar"
-		secaoSelecionada.classList.remove('mostrar');
+    if (idAtual === idAtualDesc) {
+        // Mesmo ID na função mostrarConteudoDetalhes e na função mostrarConteudoDescricao
+        secaoSelecionada.classList.remove('mostrar');
+
 	} else {
 		// ID diferente, remove a classe "mostrar" da seção anteriormente selecionada, se houver
 		if (idAtualDesc) {
@@ -91,8 +94,10 @@ function mostrarConteudoDescricao(id) {
 		// Remove a classe "mostrar" da nova seção selecionada
 		secaoSelecionada.classList.remove('mostrar');
 		
-		// Atualiza o ID atual para o novo ID
+		// Atualiza o ID atual para o novo 
 		idAtualDesc = id;
+		//mostrarConteudoDetalhes(id);
 	}
 }
 document.getElementById('mostrar').classList.add('mostrar');
+
