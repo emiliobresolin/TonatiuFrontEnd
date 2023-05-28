@@ -52,6 +52,7 @@
 // script.
 
 let idAtual = null;
+let idAtualDesc = null;
 
 function mostrarConteudoDetalhes(id) {
 	let secaoSelecionada = document.getElementById(id);
@@ -75,27 +76,23 @@ function mostrarConteudoDetalhes(id) {
 // Adicione a classe "ocultar" ao primeiro ID
 document.getElementById('ocultar').classList.add('ocultar');
 
-
-//let idAtualDesc = null;
-
 function mostrarConteudoDescricao(id) {
 	let secaoSelecionada = document.getElementById(id);
-	secaoSelecionada.classList.add('mostrar');
-	secaoSelecionada.classList.remove('mostrar');
-	// if (idAtualDesc === id) {
-	// 	// Mesmo ID, apenas remove a classe "mostrar"
-	// 	secaoSelecionada.classList.remove('mostrar');
-	// } else {
-	// 	// ID diferente, remove a classe "mostrar" da seção anteriormente selecionada, se houver
-	// 	if (idAtualDesc) {
-	// 	let secaoAnterior = document.getElementById(idAtualDesc);
-	// 	secaoAnterior.classList.add('mostrar');
-	// 	}
-	// 	// Remove a classe "mostrar" da nova seção selecionada
-	// 	secaoSelecionada.classList.remove('mostrar');
+
+	if (idAtualDesc === id) {
+		// Mesmo ID, apenas remove a classe "mostrar"
+		secaoSelecionada.classList.remove('mostrar');
+	} else {
+		// ID diferente, remove a classe "mostrar" da seção anteriormente selecionada, se houver
+		if (idAtualDesc) {
+		let secaoAnterior = document.getElementById(idAtualDesc);
+		secaoAnterior.classList.add('mostrar');
+		}
+		// Remove a classe "mostrar" da nova seção selecionada
+		secaoSelecionada.classList.remove('mostrar');
 		
-	// 	// Atualiza o ID atual para o novo ID
-	// 	idAtualDesc = id;
-	// }
+		// Atualiza o ID atual para o novo ID
+		idAtualDesc = id;
+	}
 }
-//document.getElementById('mostrar').classList.add('mostrar');
+document.getElementById('mostrar').classList.add('mostrar');
