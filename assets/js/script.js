@@ -11,7 +11,7 @@ function removePrimeiraSection()
 
 
 function mostrarConteudoDetalhes(id) {
-    
+    removePrimeiraSection();
 	let secaoSelecionada = document.getElementById(id);
 
 	if (idAtual === id) {
@@ -31,7 +31,6 @@ function mostrarConteudoDetalhes(id) {
 		// Chama a função mostrarConteudoDescricao para remover a classe 'mostrar'
 		mostrarConteudoDescricao();
 	}
-    removePrimeiraSection();
     
 }
 // Adicione a classe "ocultar" ao primeiro ID
