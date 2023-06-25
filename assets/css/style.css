@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
 
 .ocultar {
     display: none;
@@ -7,3 +7,178 @@
 .mostrar {
     display: none;
 }
+
+
+#login-form,
+#register-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* #login-form h2,
+#register-form h2 {
+  color: #007897;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+} */
+
+#login-form .form-group,
+#register-form .form-group {
+  margin-bottom: 20px;
+}
+
+#login-form label,
+#register-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #283121;
+}
+
+#login-form input[type="text"],
+#login-form input[type="email"],
+#login-form input[type="password"],
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#login-form input[type="text"]:focus,
+#login-form input[type="email"]:focus,
+#login-form input[type="password"]:focus,
+#register-form input[type="text"]:focus,
+#register-form input[type="email"]:focus,
+#register-form input[type="password"]:focus {
+  outline: none;
+  border-color: #007897;
+}
+
+#login-form input[type="submit"],
+#login-form input[type="button"],
+#register-form input[type="submit"],
+#register-form input[type="button"] {
+  display: inline-block;
+  background-color: #007897;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* #login-form input[type="submit"]:hover,
+#login-form input[type="button"]:hover,
+#register-form input[type="submit"]:hover,
+#register-form input[type="button"]:hover {
+  background-color: #005f6b;
+} */
+
+#login-form .register-link,
+#register-form .register-link {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#login-form .register-link a,
+#register-form .register-link a {
+  color: #5d93a2;
+  text-decoration: underline;
+}
+
+#login-form .register-link a:hover,
+#register-form .register-link a:hover {
+  text-decoration: none;
+}
+
+
+/* CALENDARIO */
+
+.hbContainer {
+    max-width: auto;
+    margin: auto;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .calendarList1 {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 40px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    font-size: 14px;
+    color: #707070;
+  }
+  
+  .calendarList2 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 40px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    font-size: 14px;
+    color: #707070;
+  }
+  
+  .calendarYearMonth {
+    margin-top: 24px;
+  }
+  
+  .calendarYearMonth p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .calBtn {
+    user-select: none;
+    cursor: pointer;
+    background: white;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #707070;
+    border: 1px solid #eaeaea;
+  }
+
+  .current-day {
+    font-size: large;
+    font-weight: bolder;
+    border: 2px solid #a4abff;
+    border-radius: 50px;
+  }
