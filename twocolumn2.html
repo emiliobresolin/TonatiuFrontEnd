@@ -20,10 +20,11 @@
 								<header id="header">
 									<h1><a href="index.html" id="logo">t o n a t i u</a></h1>
 									<nav id="nav">
-										<a href="index.html">Home page</a>
+										<a href="onecolumn.html">Login</a>
+										<a href="index.html">Home</a>
 										<a href="twocolumn1.html">Serviços</a>
 										<a href="twocolumn2.html" class="current-page-item">Meus Serviços</a>
-										<a href="onecolumn.html">Register</a>
+										
 										<a href="threecolumn.html">Three Column</a>
 									</nav>
 								</header>
@@ -40,6 +41,20 @@
 							<div class="col-4 col-12-medium">
 
 								<section>
+									<h2>Serviço</h2>
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<ul class="link-list">
+													$label0serviço$
+												</ul>
+											</div>
+
+										</div>
+									</div>
+								</section>
+
+								<section>
 									<h2>Detalhes da Conta</h2>
 									<ul class="small-image-list">
 										<li>
@@ -48,79 +63,82 @@
 												<p id="nome">Nome:</p>
 												<p id="email">Email:</p>
 												<p id="telefone">Telefone:</p>
-												<p id="telefone">Telefone:</p>
-												<p id="empresa">Empresa:</p>
 												<p id="endereco">Endereço:</p>
-											  </div>
+											</div>
 										</li>
 
 									</ul>
 								</section>
 
-								<section>
-									<h2>Meus Serviços</h2>
-									<div>
-										<div class="row">
-											<div class="col-6 col-12-small">
-												<ul class="link-list">
-													<!-- <li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Suspendisse varius ipsum</a></li>
-													<li><a href="#">Eget et amet consequat</a></li> -->
-												</ul>
-											</div>
-											<div class="col-6 col-12-small">
-												<ul class="link-list">
-													<!-- <li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Vitae magna sed dolore</a></li> -->
-												</ul>
-											</div>
-										</div>
-									</div>
-								</section>
+
 
 							</div>
 
 							<div class="col-8 col-12-medium imp-medium">
 
-								<section>
-									<h2>Calendario</h2>
 
-
-									<section id="myCalendar">
-										<div class="hbContainer">
-											<div class="calendarYearMonth center">
-												<p class="left calBtn" onclick="prevMonth()"> Prev </p>
-												<p id="yearMonth"> Jan 2021 </p>
-												<p class="right calBtn" onclick="nextMonth()"> Next </p>
-											</div>
-											<div>
-												<ol class="calendarList1">
-													<li class="day-name">Sat</li>
-													<li class="day-name">Sun</li>
-													<li class="day-name">Mon</li>
-													<li class="day-name">Tue</li>
-													<li class="day-name">Wed</li>
-													<li class="day-name">Thu</li>
-													<li class="day-name">Fri</li>
-												</ol>
-												<ol class="calendarList2" id="calendarList">
-							
-												</ol>
-											</div>
+								<div class="container">
+									<div class="row">
+										<div class="col-3 col-12-medium">
+											<section>
+												<h2 style="margin-bottom: 10%;">Serviço ID</h2><br>
+												$id0serviço$
+											</section>
 										</div>
-									</section>
-									
-								</section>
+										<div class="col-6 col-12-medium imp-mediumm">
+											<section>
+												<h2>Selecionar data</h2>
+												<input type="date" id="dateInput"><br>
+												<button id="btn-date" onclick="markDate()">Marcar</button><br>
+												<button id="btn-date" onclick="resetDateSelection()">Reajustar Data</button>
+											</section>
+										</div>
+										<div class="col-3 col-12-medium">
+											<section>
+												<h2 style="margin-bottom: 5px;">lançar data</h2>
+												<label for="startDate">Data Inicial:</label>
+												<input style="margin-bottom: 5px;" type="date" id="startDate"><br>
+												<label for="endDate">Data Final:</label>
+												<input type="date" id="endDate">
+												<button id="btn-date" onclick="markDateRange()">Marcar</button>
+											</section>
+										</div>
+									</div>
+								</div>
 
-								<section>
-									<h2>serviço</h2>
-									
-								</section>
+								<br><br><br>
+								<div id="calendar">
+									<section>
+										<h2>Meu Calendario</h2>
+
+
+										<section id="myCalendar">
+											<div class="hbContainer">
+												<div class="calendarYearMonth center">
+													<p class="left calBtn" onclick="prevMonth()"> Prev </p>
+													<p id="yearMonth"> Jan 2021 </p>
+													<p class="right calBtn" onclick="nextMonth()"> Next </p>
+												</div>
+												<div>
+													<ol class="calendarList1">
+														<li class="day-name">Sat</li>
+														<li class="day-name">Sun</li>
+														<li class="day-name">Mon</li>
+														<li class="day-name">Tue</li>
+														<li class="day-name">Wed</li>
+														<li class="day-name">Thu</li>
+														<li class="day-name">Fri</li>
+													</ol>
+													<ol class="calendarList2" id="calendarList">
+								
+													</ol>
+												</div>
+											</div>
+											<a style="margin-left: 5%;" class="button">Salvar Calendario</a>
+										</section>
+										
+									</section>
+								</div>
 
 							</div>
 						</div>
@@ -134,7 +152,7 @@
 							<div class="col-8 col-12-medium">
 
 								<section>
-									<h2>Serviço status</h2>
+									<h2>Meus Serviços</h2>
 									<div>
 										<div class="row">
 											<div class="col-3 col-6-medium col-12-small">
@@ -181,11 +199,10 @@
 							<div class="col-4 col-12-medium">
 
 								<section>
-									<h2>Something of interest</h2>
-									<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-									Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor sit blandit.</p>
+									<h2>Serviço Status</h2>
+									<p>Marcado</p>
+									<p>Em Progresso</p>
+									<p>Concluido</p>
 									<footer class="controls">
 										<a href="#" class="button">Oh, please continue ....</a>
 									</footer>

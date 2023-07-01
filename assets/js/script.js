@@ -94,8 +94,141 @@ function prevMonth() {
 }
 
 
+var dateRange = {
+    startYear: 0,
+    startMonth: 0,
+    startDay: 0,
+    endYear: 0,
+    endMonth: 0,
+    endDay: 0
+};
 
-//remove and insert existing elements:
+var isDateSelected = false;
+
+function markDateRange() {
+    // Obtém os valores dos inputs de data inicial e final
+    var startDate = document.getElementById('startDate').value;
+    var endDate = document.getElementById('endDate').value;
+
+    // Converte as datas para o formato desejado (ano, mês, dia)
+    var startParts = startDate.split('-');
+    var endParts = endDate.split('-');
+    var startYear = parseInt(startParts[0]);
+    var startMonth = parseInt(startParts[1]);
+    var startDay = parseInt(startParts[2]);
+    var endYear = parseInt(endParts[0]);
+    var endMonth = parseInt(endParts[1]);
+    var endDay = parseInt(endParts[2]);
+
+    // Verifica se as datas são válidas
+    if (!isNaN(startYear) && !isNaN(startMonth) && !isNaN(startDay) && !isNaN(endYear) && !isNaN(endMonth) && !isNaN(endDay)) {
+        // Atualiza os valores do objeto dateRange
+        dateRange.startYear = startYear;
+        dateRange.startMonth = startMonth;
+        dateRange.startDay = startDay;
+        dateRange.endYear = endYear;
+        dateRange.endMonth = endMonth;
+        dateRange.endDay = endDay;
+        // Marca a faixa de datas no calendário
+        for (var year = startYear; year <= endYear; year++) {
+            var startMonthIndex = (year === startYear) ? startMonth : 1;
+            var endMonthIndex = (year === endYear) ? endMonth : 12;
+            for (var month = startMonthIndex; month <= endMonthIndex; month++) {
+                var startDayIndex = (year === startYear && month === startMonth) ? startDay : 1;
+                var endDayIndex = (year === endYear && month === endMonth) ? endDay : new Date(year, month, 0).getDate();
+                for (var day = startDayIndex; day <= endDayIndex; day++) {
+                    var dateElement = document.getElementById(day);
+                    if (dateElement) {
+                        dateElement.classList.add('selected-range');
+                        // Obtenha a referência para a div de destino
+                        target = document.getElementById("calendar");
+                    }
+                }
+            }
+        }
+        // Define a flag de seleção como true
+        // isDateSelected = true;
+        alert('Range selecionado com sucesso.');
+        // Role a página até a div de destino
+        target.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function markDate() {
+
+    // Verifica se uma data já foi selecionada
+    if (isDateSelected) {
+        alert('Seleção de data ja ocorreu, click em reajustar para modifica-la.');
+        return; // Retorna se uma data já foi selecionada
+    }
+
+    // Obtém o valor do input de data
+    var selectedDate = document.getElementById('dateInput').value;
+
+    // Converte a data para o formato desejado (ano, mês, dia)
+    var dateParts = selectedDate.split('-');
+    var year = parseInt(dateParts[0]);
+    var month = parseInt(dateParts[1]);
+    var day = parseInt(dateParts[2]);
+
+    // Verifica se a data é válida
+    if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
+        // Obtém os valores dos inputs de data inicial e final definidos por markDateRange
+        var startYear = dateRange.startYear;
+        var startMonth = dateRange.startMonth;
+        var startDay = dateRange.startDay;
+        var endYear = dateRange.endYear;
+        var endMonth = dateRange.endMonth;
+        var endDay = dateRange.endDay;
+
+        // Verifica se a data selecionada está dentro do intervalo
+        if (
+            year >= startYear && year <= endYear &&
+            month >= startMonth && month <= endMonth &&
+            day >= startDay && day <= endDay
+        ) {
+            // Marca a data no calendário
+            var dateElement = document.getElementById(day);
+            if (dateElement) {
+                dateElement.classList.add('selected');
+                alert('Data do serviço adicionada com sucesso ao calendario.');
+                isDateSelected = true; // Atualiza a flag
+                // Obtenha a referência para a div de destino
+                target = document.getElementById("calendar");
+                // Role a página até a div de destino
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+
+        }else{
+            alert('A data selecionada não está disponível.');
+        }
+    }
+
+
+}
+
+function removeSelectedDate() {
+    // Remove a classe 'selected' do elemento marcado
+    var selectedElement = document.getElementsByClassName('selected')[0];
+    if (selectedElement) {
+        selectedElement.classList.remove('selected');
+        isDateSelected = false;
+        alert('Data do serviço removida do calendario.')
+    }
+}
+
+function resetDateSelection() {
+    removeSelectedDate(); // Remove a data atualmente selecionada
+    isDateSelected = false; // Define a flag de seleção como false
+}
+
+
+
+
+
+
+
+
 
 let idAtual = null;
 let idAtualDesc = null;
@@ -156,13 +289,6 @@ function mostrarConteudoDescricao(id) {
 }
 document.getElementById('mostrar').classList.add('mostrar');
 
-
-
-
-// function showRegisterForm() {
-//     document.getElementById("login-form").style.display = "none";
-//     document.getElementById("register-form").style.display = "block";
-//   }
   
   function showLoginForm() 
   {

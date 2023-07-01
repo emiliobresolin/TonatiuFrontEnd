@@ -20,10 +20,11 @@
 								<header id="header">
 									<h1><a href="index.html" id="logo">t o n a t i u</a></h1>
 									<nav id="nav">
-										<a href="index.html">Home page</a>
+										<a href="onecolumn.html" class="current-page-item">Login</a>
+										<a href="index.html">Home</a>
 										<a href="twocolumn1.html">Serviços</a>
 										<a href="twocolumn2.html">Meus Serviços</a>
-										<a href="onecolumn.html" class="current-page-item">Register</a>
+										
 										<a href="threecolumn.html">Three Column</a>
 									</nav>
 								</header>
@@ -40,8 +41,23 @@
 							<div>
 
 								<div>
+								
+									<section id="login-form" style=" text-align: center;">
+										<h2>Login</h2>
+										<form>
+										<label for="login-username">Username:</label>
+										<input type="text" id="login-username" name="login-username" required>
+										<br>
+										<label for="login-password">Password:</label>
+										<input type="password" id="login-password" name="login-password" required>
+										<br>
+										<input type="submit" value="Login" class="button">
+										<input type="button" value="Register" class="button" onclick="document.getElementById('register-form').style.display = 'block'; document.getElementById('login-form').style.display = 'none';">
+										
+										</form>
+									</section>
 
-									<section id="register-form" style="text-align: center;">
+									<section id="register-form" style="display: none; text-align: center;">
 										<h2>Register</h2>
 										<form>
 										<label for="register-username">Username:</label>
@@ -59,21 +75,6 @@
 										<input type="submit" value="Register" class="button">
 										
 										<input type="button" value="Go to Login" class="button" onclick="showLoginForm()">
-										</form>
-									</section>
-								
-									<section id="login-form" style="display: none; text-align: center;">
-										<h2>Login</h2>
-										<form>
-										<label for="login-username">Username:</label>
-										<input type="text" id="login-username" name="login-username" required>
-										<br>
-										<label for="login-password">Password:</label>
-										<input type="password" id="login-password" name="login-password" required>
-										<br>
-										<input type="submit" value="Login" class="button">
-										<input type="button" value="Back to Register" class="button" onclick="document.getElementById('register-form').style.display = 'block'; document.getElementById('login-form').style.display = 'none';">
-										
 										</form>
 									</section>
 									
