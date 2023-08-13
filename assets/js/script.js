@@ -34,32 +34,48 @@ function letsCheck(year, month) {
 
 // Function to generate the calendar for a specific year and month
 function makeCalendar(year, month) {
-	// Checking the number of days in the month and the day of the week for the first day
-    var getChek = letsCheck(year, month);
-	// Adjusting the first day index to start from Monday (0) to Sunday (6)
-    getChek.firstDay === 0 ? getChek.firstDay = 7 : getChek.firstDay;
-	// Clearing the calendar list container
+    // Get the number of days in the month
+    var daysInMonth = new Date(year, month, 0).getDate();
+
+    // Calculate the first day of the week (0 - Sunday, 1 - Monday, ..., 6 - Saturday)
+    var firstDay = new Date(year, month - 1, 1).getDay();
+
+    // Clear the calendar list container
     $('#calendarList').empty();
-	// Generating the calendar HTML by looping through each day of the month
-    for (let i = 1; i <= getChek.daysInMonth; i++) {
-		// Creating a list item with the day number and positioning it based on the first day of the month
-        if (i === 1) {
-            var div = '<li id="' + i + '" style="grid-column-start: ' + getChek.firstDay + ';">1</li>';
-        } else {
-            var div = '<li id="' + i + '" >' + i + '</li>'
+
+    // Generate the calendar HTML by looping through each day of the month
+    for (let i = 1; i <= daysInMonth; i++) {
+        var li = document.createElement("li");
+        li.id = i;
+        li.textContent = i;
+
+        // Calculate the grid column start for the first day of the month
+        var gridColumnStart = (i === 1) ? firstDay : (firstDay + i - 1) % 7;
+        li.style.gridColumnStart = gridColumnStart + 1;
+
+        // Check if the day is the current day
+        var currentDate = new Date();
+        if (i === currentDate.getDate() && month === currentDate.getMonth() + 1 && year === currentDate.getFullYear()) {
+            li.className = "current-day";
+            li.innerHTML = "<b>" + i + "</b>";
         }
-		if (i === new Date().getDate() && month === new Date().getMonth() + 1 && year === new Date().getFullYear()) {
-			div = '<li id="' + i + '" class="current-day"><b>' + i + '</b></li>';
-		}
-        $('#calendarList').append(div);
+
+        // Append the list item to the calendar list
+        $('#calendarList').append(li);
     }
-	// Retrieving the name of the month based on the month ID
-    monthName = months.find(x => x.id === month).name;
-	// Updating the year and month display
+
+    // Retrieve the name of the month based on the month ID
+    var monthName = months.find(x => x.id === month).name;
+
+    // Update the year and month display
     $('#yearMonth').text(year + ' ' + monthName);
 }
+
 // Generating the calendar for the current year and month
 makeCalendar(currentYear, currentMonth);
+
+
+
 
 // Function to navigate to the next month
 function nextMonth() {
@@ -295,3 +311,22 @@ document.getElementById('mostrar').classList.add('mostrar');
     document.getElementById("register-form").style.display = "none";
     document.getElementById("login-form").style.display = "block";
   }
+
+
+//pegando titulo de serviços e jogando em meus serviços:
+document.addEventListener('DOMContentLoaded', function () {
+    const servicoButtons = document.querySelectorAll('.servico-button');
+
+    servicoButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const tituloServico = button.getAttribute('data-titulo');
+            window.location.href = `${button.href}&titulo=${encodeURIComponent(tituloServico)}`;
+            return false; // Para evitar que o link seja seguido imediatamente
+        });
+    });
+});
+
+
+
+
+

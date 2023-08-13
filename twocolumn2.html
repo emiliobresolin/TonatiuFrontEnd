@@ -23,9 +23,9 @@
 										<a href="onecolumn.html">Login</a>
 										<a href="index.html">Home</a>
 										<a href="twocolumn1.html">Serviços</a>
-										<a href="twocolumn2.html" class="current-page-item">Meus Serviços</a>
+										<a href="twocolumn2.html" class="current-page-item">Requisitar Serviço</a>
 										
-										<a href="threecolumn.html">Three Column</a>
+										<a href="threecolumn.html">Meu Serviços</a>
 									</nav>
 								</header>
 
@@ -46,13 +46,23 @@
 										<div class="row">
 											<div class="col-6 col-12-small">
 												<ul class="link-list">
-													$label0serviço$
+													<div id="servicoSelecionado">Serviço não foi selecionado.</div>
 												</ul>
 											</div>
-
 										</div>
 									</div>
 								</section>
+								<script>
+									document.addEventListener('DOMContentLoaded', function () {
+										const servicoDiv = document.getElementById('servicoSelecionado');
+										const urlParams = new URLSearchParams(window.location.search);
+										const tituloServico = urlParams.get('titulo');
+								
+										if (tituloServico) {
+											servicoDiv.textContent = decodeURIComponent(tituloServico);
+										}
+									});
+								</script>
 
 								<section>
 									<h2>Detalhes da Conta</h2>
@@ -82,7 +92,19 @@
 										<div class="col-3 col-12-medium">
 											<section>
 												<h2 style="margin-bottom: 10%;">Serviço ID</h2><br>
-												$id0serviço$
+												<div id="servicoDiv">Serviço não foi selecionado.</div>
+												<script>
+													document.addEventListener('DOMContentLoaded', function () {
+														const params = new URLSearchParams(window.location.search);
+														const idDoServico = params.get('servico');
+												
+														const divServico = document.getElementById('servicoDiv');
+														
+														if (idDoServico) {
+															divServico.textContent = 'id: ' + idDoServico;
+														}
+													});
+												</script>
 											</section>
 										</div>
 										<div class="col-6 col-12-medium imp-mediumm">
@@ -109,7 +131,7 @@
 								<br><br><br>
 								<div id="calendar">
 									<section>
-										<h2>Meu Calendario</h2>
+										<h2>Datas disponiveis:</h2>
 
 
 										<section id="myCalendar">
@@ -121,20 +143,20 @@
 												</div>
 												<div>
 													<ol class="calendarList1">
-														<li class="day-name">Sat</li>
 														<li class="day-name">Sun</li>
 														<li class="day-name">Mon</li>
 														<li class="day-name">Tue</li>
 														<li class="day-name">Wed</li>
 														<li class="day-name">Thu</li>
 														<li class="day-name">Fri</li>
+														<li class="day-name">Sat</li>
+														
 													</ol>
 													<ol class="calendarList2" id="calendarList">
-								
 													</ol>
 												</div>
 											</div>
-											<a style="margin-left: 5%;" class="button">Salvar Calendario</a>
+											<a style="margin-left: 5%;" class="button" id="saveCalendarButton" onclick="">Requisitar Serviço</a>
 										</section>
 										
 									</section>
@@ -157,40 +179,25 @@
 										<div class="row">
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Suspendisse varius ipsum</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
 											</div>
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Vitae magna sed dolore</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
 											</div>
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Suspendisse varius ipsum</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-small">
-												<ul class="link-list">
-													<label><input type="checkbox" name="Nonbinary" >testCheckBox</label><br>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-												</ul>
-											</div>
+											</div>	
 										</div>
 									</div>
 								</section>
@@ -200,11 +207,13 @@
 
 								<section>
 									<h2>Serviço Status</h2>
-									<p>Marcado</p>
-									<p>Em Progresso</p>
+									<p style="margin-bottom: 1%;">Agendado</p>
+									<p style="margin-bottom: 1%;">Esperando aprovação</p>
+									<p style="margin-bottom: 1%;">Aprovado</p>
+									<p style="margin-bottom: 1%;">Em Andamento</p>
 									<p>Concluido</p>
 									<footer class="controls">
-										<a href="#" class="button">Oh, please continue ....</a>
+										<a href="#" class="button">Editar Serviço</a>
 									</footer>
 								</section>
 
@@ -231,7 +240,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/script.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			
 			
 
 	</body>

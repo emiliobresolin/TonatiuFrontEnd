@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -17,14 +18,14 @@
 							<div class="col-12">
 
 								<header id="header">
-									<h1><a href="index.html" id="logo">Minimaxing</a></h1>
+									<h1><a href="index.html" id="logo">T O N A T I U</a></h1>
 									<nav id="nav">
 										<a href="onecolumn.html">Login</a>
 										<a href="index.html">Home</a>
-										<a href="twocolumn1.html">Two Column #1</a>
-										<a href="twocolumn2.html">Two Column #2</a>
+										<a href="twocolumn1.html">Serviços</a>
+										<a href="twocolumn2.html">Requisitar Serviço</a>
 										
-										<a href="threecolumn.html" class="current-page-item">Three Column</a>
+										<a href="threecolumn.html" class="current-page-item">Meu Serviços</a>
 									</nav>
 								</header>
 
@@ -40,63 +41,78 @@
 							<div class="col-3 col-12-medium">
 
 								<section>
-									<h2>Compelling links</h2>
+									<h2>Serviços Realizados</h2>
 									<ul class="link-list">
-										<li><a href="#">Quis accumsan lorem</a></li>
-										<li><a href="#">Sed neque nisi consequat</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
-										<li><a href="#">Vitae magna sed dolore</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
+										<li><a href="#">Serviço #1</a></li>
+										<li><a href="#">Serviço #2</a></li>
+										<li><a href="#">Serviço #3</a></li>
 									</ul>
 								</section>
 
 								<section>
-									<h2>Something profound</h2>
-									<p>Duis neque sed nisi, dapibus sed mattis rutrum accumsan sed.
-									Suspendisse eu varius amet nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor consequat blandit tempus ipsum dolor lorem sit amet.</p>
+									<h2>Descrição do meu endereço</h2>
+									<p>Descrição:</p>
+									<p>Ponto de Referencia:</p>
 								</section>
 
 							</div>
 							<div class="col-6 col-12-medium imp-medium">
+								<div id="calendar">
+									<section id="myCalendar">
+										<div class="hbContainer">
+											<div class="calendarYearMonth center">
+												<p class="left calBtn" onclick="prevMonth()"> Prev </p>
+												<p id="yearMonth"> Jan 2021 </p>
+												<p class="right calBtn" onclick="nextMonth()"> Next </p>
+											</div>
+											<div>
+												<ol class="calendarList1">
+													<li class="day-name">Sun</li>
+													<li class="day-name">Mon</li>
+													<li class="day-name">Tue</li>
+													<li class="day-name">Wed</li>
+													<li class="day-name">Thu</li>
+													<li class="day-name">Fri</li>
+													<li class="day-name">Sat</li>
+													
+												</ol>
+												<ol class="calendarList2" id="calendarList">
+												</ol>
 
-								<section class="middle-content">
-									<h2>Three Column (two sidebars)</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante ante, viverra a ornare sed, convallis sed est. Proin felis sapien, adipiscing quis eleifend vel, sodales vitae sapien. Donec vel lacus leo, eu convallis metus. Cras egestas feugiat tortor, vitae interdum augue aliquam a. Sed nec augue id orci egestas commodo in eget magna. Nunc eleifend diam non odio laoreet placerat gravida nulla bibendum. Phasellus tempus imperdiet suscipit.</p>
-									<p>Mauris risus nulla, pulvinar vitae sagittis a, pharetra nec tellus. Suspendisse varius enim ac felis mattis aliquam. Aenean et justo quis ipsum gravida lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia bibendum cursus. Nullam nec pellentesque lacus. In porta erat in tortor rhoncus quis accumsan magna pretium. Nulla posuere magna eget mauris lacinia in mollis sem fermentum. Donec mollis adipiscing mauris, ut posuere enim rhoncus ut. Nunc commodo vestibulum orci vel placerat. Cras sed risus libero. Donec ac lacus vitae lectus mattis commodo id vitae libero. Etiam lorem odio, volutpat nec pulvinar sit amet, tincidunt ut lacus. Pellentesque consequat arcu vel nisi lobortis in pellentesque orci sollicitudin. Cras gravida lacus turpis, consectetur porttitor lectus. Cras malesuada tortor id neque porta ut semper quam iaculis.</p>
-									<p>Nulla ut tortor quam, a luctus nunc. Nulla condimentum diam porttitor arcu placerat tincidunt. Nunc non augue ipsum. Nulla facilisi. Phasellus feugiat augue in ipsum egestas semper. Suspendisse blandit, nisl ullamcorper blandit sollicitudin, sem leo auctor lectus, et volutpat mauris elit et odio. Ut elementum risus in metus mollis tristique vulputate nulla interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae orci dui, ut facilisis dui.</p>
-								</section>
+											</div>
+										</div>
+									</section>
+								</div>
+
+								<a href="twocolumn1.html" class="button">Editar Serviços</a>
+
+
 
 							</div>
 							<div class="col-3 col-12-medium">
 
 								<section>
-									<h2>Who are you guys?</h2>
+									<h2>Meu perfil</h2>
 									<ul class="small-image-list">
 										<li>
-											<a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-											<h4>Jane Anderson</h4>
+											<div style="position: absolute;"><img src="images/pic2.jpg" alt="" class="left" /></div>
+											<br><br><br><br><br>
+											<h4>Emilio Bresolin</h4>
 											<p>Varius nibh. Suspendisse vitae magna eget et amet mollis justo facilisis amet quis.</p>
+											<a href="twocolumn1.html" class="button">Editar Perfil</a>
 										</li>
-										<li>
-											<a href="#"><img src="images/pic1.jpg" alt="" class="left" /></a>
-											<h4>James Doe</h4>
-											<p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
-										</li>
+
 									</ul>
 								</section>
 
 								<section>
-									<h2>How about some links?</h2>
+									<h2>Meu dados</h2>
 									<ul class="link-list">
-										<li><a href="#">Quis accumsan lorem</a></li>
-										<li><a href="#">Sed neque nisi consequat</a></li>
-										<li><a href="#">Eget et amet consequat</a></li>
-										<li><a href="#">Dapibus sed mattis blandit</a></li>
-										<li><a href="#">Vitae magna sed dolore</a></li>
+										<li>Rua: </li>
+										<li>Bairro: </li>
+										<li>Cidade: </li>
+										<li>Estado: </li>
+										<li>Pais: </li>
 									</ul>
 								</section>
 
@@ -112,43 +128,28 @@
 							<div class="col-8 col-12-medium">
 
 								<section>
-									<h2>How about a truckload of links?</h2>
+									<h2>Serviços em andamento</h2>
 									<div>
 										<div class="row">
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Suspendisse varius ipsum</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
 											</div>
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Vitae magna sed dolore</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
 											</div>
 											<div class="col-3 col-6-medium col-12-small">
 												<ul class="link-list">
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Suspendisse varius ipsum</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-small">
-												<ul class="link-list">
-													<li><a href="#">Quis accumsan lorem</a></li>
-													<li><a href="#">Sed neque nisi consequat</a></li>
-													<li><a href="#">Eget et amet consequat</a></li>
-													<li><a href="#">Dapibus sed mattis blandit</a></li>
-													<li><a href="#">Vitae magna sed dolore</a></li>
+													<li><a href="#">Serviço #1</a></li>
+													<li><a href="#">Serviço #2</a></li>
+													<li><a href="#">Serviço #3</a></li>
 												</ul>
 											</div>
 										</div>
@@ -159,13 +160,13 @@
 							<div class="col-4 col-12-medium">
 
 								<section>
-									<h2>Something of interest</h2>
-									<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-									Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-									mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-									lorem ipsum dolor sit blandit.</p>
+									<h2>Editar Serviço</h2>
+									<p>Status:</p>
+									<p>Data:</p>
+									<p>Local:</p>
+									<p>Horario:</p>
 									<footer class="controls">
-										<a href="#" class="button">Oh, please continue ....</a>
+										<a href="#" class="button">Editar Esse Serviço</a>
 									</footer>
 								</section>
 
@@ -191,6 +192,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/script.js"></script>
 
 	</body>
 </html>
